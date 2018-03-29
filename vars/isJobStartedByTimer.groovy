@@ -1,5 +1,5 @@
 @NonCPS
-def isJobStartedByTimer() {
+def call() {
     def startedByTimer = false
     try {
         def buildCauses = currentBuild.rawBuild.getCauses()
