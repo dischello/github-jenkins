@@ -1,7 +1,7 @@
 node {
   stage 'Stage Upload To Fabric'
-  def getLastBuildCause = def getLastBuildCause()
-  echo "${getLastBuildCause}"
+  def Cause = getLastBuildCause()
+  echo "${Cause}"
 }
 
 @NonCPS
