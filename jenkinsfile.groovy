@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
   agent any
   triggers {
         cron('* * * * *')
@@ -11,9 +11,10 @@ pipeline{
                 return currentBuildCause.class.getName().contains('TimerTriggerCause')
             }
         }
+      }
       steps{
-      echo Build will be start with init
-      }    
+        echo Build will be start with init
+      }
     }
   }
 }
