@@ -2,9 +2,9 @@
 def call() {
 //def startedByTimer = false
 println "Start of the lib"
-def test = manager.build.causes[0].toString()
-//def isStartedByUser = currentBuild.rawBuild.getCause(hudson.model.Cause$TimerTrigger.TimerTriggerCause).getShortDescription
-        println isStartedByUser "{$test}"
+//def test = manager.build.causes[0].toString()
+def isStartedByUser = currentBuild.rawBuild.getCause(hudson.model.Cause$TimerTrigger.TimerTriggerCause).toString()
+        println isStartedByUser "{$isStartedByUser}"
 return isStartedByUser
 /*
 try {
