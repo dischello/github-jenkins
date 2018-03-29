@@ -1,5 +1,5 @@
 node {
-  stage 'Stage Upload To Fabric'{
+  stage('Stage Upload To Fabric'){
   getLastBuildCause()
   }
 }
