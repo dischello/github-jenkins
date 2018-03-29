@@ -2,6 +2,7 @@
 
 pipeline {
   agent any
+  trigger {cron('*/10 * * * *')}
   stages{
     stage ('Test::Build::Cause'){
       steps{
