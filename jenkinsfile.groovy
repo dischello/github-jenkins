@@ -13,7 +13,7 @@ pipeline {
         }
       }
       steps{
-        echo Build will be start with init
+        echo "Build will be start with init"
       }
     }
   }
