@@ -17,8 +17,8 @@ pipeline{
     }
   }
 }
-// check if the job was started by a timer
-@NonCPS
+/* check if the job was started by a timer
+//@NonCPS
 def isJobStartedByTimer() {
     def startedByTimer = false
     try {
@@ -38,3 +38,4 @@ def isJobStartedByTimer() {
 
     return startedByTimer
 }
+*/
