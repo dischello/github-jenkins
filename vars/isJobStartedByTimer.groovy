@@ -1,8 +1,10 @@
 @NonCPS
 def call() {
-def startedByTimer = false
-def isStartedByUser = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause) != null
+//def startedByTimer = false
+def isStartedByUser = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)
 println isStartedByUser "{$isStartedByUser}"
+return isStartedByUser
+/*
 try {
         def buildCauses = currentBuild.rawBuild.getCauses(hudson.model.Cause$UserIdCause)
         for ( buildCause in buildCauses ) {
@@ -19,5 +21,6 @@ try {
     }
 
     return startedByTimer
+    */
 }
 
