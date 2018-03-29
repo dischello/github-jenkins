@@ -6,6 +6,6 @@ node {
 
 @NonCPS
 def getLastBuildCause() {
-    def specificCause = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)
+    def specificCause = hudson.model.CauseAction.getCauses()
     return specificCause
 }
