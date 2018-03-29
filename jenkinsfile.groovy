@@ -1,9 +1,18 @@
 pipeline{
   agent any
+  triggers {
+        cron('* * * * *')
+    }
   stages{
     stage ('Test::Build::Cause'){
+      when {
+        expression {
+            for (Object currentBuildCause : script.currentBuild.rawBuild.getCauses()) {
+                return currentBuildCause.class.getName().contains('TimerTriggerCause')
+            }
+        }
       steps{
-      echo isJobStartedByTimer()
+      echo Build will be start with init
       }    
     }
   }
