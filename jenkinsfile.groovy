@@ -1,10 +1,11 @@
 node {
-  stage 'Stage Upload To Fabric'
+  stage 'Stage Upload To Fabric'{
   getLastBuildCause()
+  }
 }
 
 @NonCPS
 def getLastBuildCause() {
-    def causes = currentBuild.causes[0]
+    def causes = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause).properties
     return causes
 }
