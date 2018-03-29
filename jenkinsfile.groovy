@@ -1,6 +1,10 @@
 node {
   stage('Stage Upload To Fabric'){
-  getLastBuildCause()
+  def buildLog = currentBuild.rawBuild.log
+  echo "currentBuild.rawBuild.log"
+  cause = "${buildLog}"
+  println buildlog
+  
   }
 }
 
