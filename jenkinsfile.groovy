@@ -1,3 +1,4 @@
+@Library('test-libs@master') 
 pipeline {
   agent any
   triggers {
@@ -5,15 +6,9 @@ pipeline {
     }
   stages{
     stage ('Test::Build::Cause'){
-      when {
-        expression {
-            for (Object currentBuildCause : script.currentBuild.rawBuild.getCauses()) {
-                return currentBuildCause.class.getName().contains('TimerTriggerCause')
-            }
-        }
-      }
       steps{
         echo "Build will be start with init"
+        isJobStartedByTimer()
       }
     }
   }
