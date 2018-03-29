@@ -1,11 +1,12 @@
 pipeline{
   agent any
   options {
-  timestamp()
   }
   stages{
     stage ('Test::Build::Cause'){
+      steps{
       echo isJobStartedByTimer()
+      }    
     }
   }
 }
