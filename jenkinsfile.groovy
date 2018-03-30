@@ -2,7 +2,9 @@
 
 pipeline {
   agent any
-  triggers { pollSCM('*/10 * * * *') }
+  triggers {
+        cron('*/10 * * * *')
+    }
   stages{
     stage ('Test::Build::Cause'){
       steps{
